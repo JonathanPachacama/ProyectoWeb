@@ -34,7 +34,24 @@ module.exports.routes = {
 
   'get /': {
     view: 'homepage'
-  }
+  },
+  '/listaFestividad': {
+    view: 'Festividad/ListaFestividad'
+  },
+
+  '/ecuafestDetalleActividades': {
+    view: 'Festividad/EcuaFestDetalleActividades'
+  },
+  '/ecuafestDetalleHoteles': {
+    view: 'Festividad/EcuaFestDetalleHoteles'
+  },
+  '/ecuafestDetalleGastronomia': {
+    view: 'Festividad/EcuaFestDetalleGastronomia'
+  },
+  '/ecuafestDetalle': {
+    view: 'Festividad/EcuafestDetalleLayout'
+  },
+
 
   /***************************************************************************
   *                                                                          *
