@@ -30,34 +30,42 @@
 
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.css">
     <!--STYLES END-->
   </head>
 
   <body>
+
+  <%-partial ('header.ejs')%>
+  <!--Siempre debe estar el body sino no se renderiza-->
+  <div class="container">
+
     <%- body %>
+  </div>
 
 
 
-    <!--
-        Client-side Templates
-        ========================
 
-        HTML templates are important prerequisites of modern, rich client applications.
-        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
-        that you load these templates client-side.
+  <!--
+      Client-side Templates
+      ========================
 
-        By default, your Gruntfile is configured to automatically load and precompile
-        client-side JST templates in your `assets/templates` folder, then
-        include them here automatically (between TEMPLATES and TEMPLATES END).
+      HTML templates are important prerequisites of modern, rich client applications.
+      To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+      that you load these templates client-side.
 
-        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
-        For example, here are a few things you could do:
+      By default, your Gruntfile is configured to automatically load and precompile
+      client-side JST templates in your `assets/templates` folder, then
+      include them here automatically (between TEMPLATES and TEMPLATES END).
 
-            + Import templates from other directories
-            + Use a different template engine (handlebars, jade, dust, etc.)
-            + Internationalize your client-side templates using a server-side
-              stringfile before they're served.
-    -->
+      To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Import templates from other directories
+          + Use a different template engine (handlebars, jade, dust, etc.)
+          + Internationalize your client-side templates using a server-side
+            stringfile before they're served.
+  -->
 
     <!--TEMPLATES-->
     
@@ -89,6 +97,7 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/Bootstrap/js/bootstrap.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
