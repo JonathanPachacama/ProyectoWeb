@@ -52,6 +52,10 @@ module.exports.routes = {
     view: 'Festividad/EcuafestDetalleLayout'
   },
 
+  '/oculto': {
+    view: 'Oculto/loginAdm'
+  },
+
 
   /***************************************************************************
   *                                                                          *
