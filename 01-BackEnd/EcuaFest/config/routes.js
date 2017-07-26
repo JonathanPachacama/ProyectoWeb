@@ -52,9 +52,8 @@ module.exports.routes = {
     view: 'Festividad/EcuafestDetalleLayout'
   },
 
-  '/oculto': {
-    view: 'Oculto/loginAdm'
-  },
+  'get /oculto':
+    'VistaController.login'
 
 
   /***************************************************************************
