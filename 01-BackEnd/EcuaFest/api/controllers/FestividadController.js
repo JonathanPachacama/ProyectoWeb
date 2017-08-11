@@ -14,8 +14,8 @@ module.exports = {
                 return res.serverError(error);
             }
             else {
-                return res.redirect("/");
+                return res.redirect("/listaFestividad");
             }
         });
-    }
+    },
 };
