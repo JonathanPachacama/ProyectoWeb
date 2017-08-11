@@ -26,6 +26,17 @@
         <%= festividades[i].id %>
       </p>
 
+
+      <form action="/Festividad/eliminarFestividad" method="post">
+        <input hidden
+               type="text"
+               value="<%=festividades[i].id%>"
+               name="id">
+        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
+        <a href="/ecuafestDetalleActividades?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Editar</button>
+        </a>
+
       </form>
 
     </div>

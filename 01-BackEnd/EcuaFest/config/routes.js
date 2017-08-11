@@ -37,9 +37,8 @@ module.exports.routes = {
   },
   'get /listaFestividad': 'FestividadController.listarFestividad',
 
-  '/ecuafestDetalleActividades': {
-    view: 'Festividad/EcuaFestDetalleActividades'
-  },
+  'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
+
   '/ecuafestDetalleHoteles': {
     view: 'Festividad/EcuaFestDetalleHoteles'
   },
