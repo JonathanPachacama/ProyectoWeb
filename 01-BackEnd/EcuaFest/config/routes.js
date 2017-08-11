@@ -35,7 +35,7 @@ module.exports.routes = {
   'get /': {
     view: 'homepage'
   },
-  'get /listaFestividad': 'VistaController.listarFestividad',
+  'get /listaFestividad': 'FestividadController.listarFestividad',
 
   '/ecuafestDetalleActividades': {
     view: 'Festividad/EcuaFestDetalleActividades'
