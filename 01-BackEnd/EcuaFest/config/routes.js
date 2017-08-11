@@ -53,7 +53,12 @@ module.exports.routes = {
   },
 
   'get /oculto':
-    'VistaController.login'
+    'VistaController.login',
+  '/crearFestividad': {
+    view: 'Festividad/CrearFestividad'
+  },
+  'get /crearFestividad':
+    'FestividadController.crearFestividad'
 
 
   /***************************************************************************
