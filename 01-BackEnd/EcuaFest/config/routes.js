@@ -52,11 +52,26 @@ module.exports.routes = {
 
   'get /oculto':
     'VistaController.login',
+
   '/crearFestividad': {
     view: 'Festividad/CrearFestividad'
   },
   'get /crearFestividad':
-    'FestividadController.crearFestividad'
+    'FestividadController.crearFestividad',
+
+  '/crearActividad': {
+    view: 'Festividad/Actividades/CrearActividad'
+  },
+  'get /crearActividad':
+    'ActividadController.crearActividad',
+
+  '/crearGastronomia': {
+    view: 'Festividad/Gastronomia/CrearGastronomia'
+  },
+  'get /crearGastronomia':
+    'GastronomiaController.crearGastronomia'
+
+
 
 
   /***************************************************************************
