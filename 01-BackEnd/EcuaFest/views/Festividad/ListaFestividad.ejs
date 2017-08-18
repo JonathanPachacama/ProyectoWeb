@@ -1,0 +1,45 @@
+<P>Aqui va la pantalla de Lista de festividad</P>
+
+<a href="/ecuafestDetalle">Busqueda de actividades</a>
+
+<a href="/crearFestividad">
+  <button type="button"  class="btn btn-primary">Crear Festividad</button>
+</a>
+<br><br>
+
+<div id="contenedor" class="row">
+  <% for(var i=0; i<festividades.length; i++) {%>
+  <div class="card" style="width: 20rem;">
+    <div class="card-block">
+
+      <h4 class="card-title"><%= festividades[i].nombreFest %></h4>
+      <p class="card-text">
+        <%= festividades[i].lugarFest %>
+      </p>
+      <p class="card-text">
+        <%= festividades[i].mesFest %>
+      </p>
+      <p class="card-text">
+        <%= festividades[i].imagenFest %>
+      </p>
+      <p class="card-text">
+        <%= festividades[i].id %>
+      </p>
+
+
+      <form action="/Festividad/eliminarFestividad" method="post">
+        <input hidden
+               type="text"
+               value="<%=festividades[i].id%>"
+               name="id">
+        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
+        <a href="/ecuafestDetalleActividades?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Editar</button>
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+  <% } %>
+</div>

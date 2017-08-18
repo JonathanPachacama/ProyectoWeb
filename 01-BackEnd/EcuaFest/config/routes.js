@@ -34,7 +34,44 @@ module.exports.routes = {
 
   'get /': {
     view: 'homepage'
-  }
+  },
+  'get /listaFestividad': 'FestividadController.listarFestividad',
+
+  'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
+
+  '/ecuafestDetalleHoteles': {
+    view: 'Festividad/EcuaFestDetalleHoteles'
+  },
+  '/ecuafestDetalleGastronomia': {
+    view: 'Festividad/EcuaFestDetalleGastronomia'
+  },
+  '/ecuafestDetalle': {
+    view: 'Festividad/EcuafestDetalleLayout'
+  },
+
+  'get /oculto':
+    'VistaController.login',
+
+  '/crearFestividad': {
+    view: 'Festividad/CrearFestividad'
+  },
+  'get /crearFestividad':
+    'FestividadController.crearFestividad',
+
+  '/crearActividad': {
+    view: 'Festividad/Actividades/CrearActividad'
+  },
+  'get /crearActividad':
+    'ActividadController.crearActividad',
+
+  '/crearGastronomia': {
+    view: 'Festividad/Gastronomia/CrearGastronomia'
+  },
+  'get /crearGastronomia':
+    'GastronomiaController.crearGastronomia'
+
+
+
 
   /***************************************************************************
   *                                                                          *

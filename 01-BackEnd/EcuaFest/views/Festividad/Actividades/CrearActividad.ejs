@@ -1,0 +1,66 @@
+<h1>CREAR ACTIVIDAD</h1>
+
+<form action="/Actividad/crearActividad" method="post">
+
+  <div class="form-group row">
+    <label for="nombreFest" class="col-2 col-form-label">Nombre Actividad</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="text"
+             placeholder="Ingrese nombre Actividad"
+             id="nombreActivity"
+             name="nombreActivity">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="lugarFest" class="col-2 col-form-label">Lugar de Actividad</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+             placeholder="Ingrese Lugar de Actividad"
+             name="direccionActivity"
+             id="direccionActivity">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="mesFest" class="col-2 col-form-label">Descripcion de Actividad</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Ingrese descripcion de Actividad"
+             id="descripcionActivity"
+             name="descripcionActivity">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="example-date-input" class="col-2 col-form-label">Fecha de la actividad</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="date"
+             placeholder="dd/mm/aa"
+             id="fechaActivity"
+             name="fechaActivity">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="imagenFest" class="col-2 col-form-label">Imagen</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="text"
+             placeholder="Ingrese la url de la imagen"
+             name="imagenActivity"
+             id="imagenActivity">
+    </div>
+  </div>
+
+  <button type="button"
+          class="btn btn-outline-secondary">Boton</button>
+
+  <button
+    class="btn btn-outline-success">Crear</button>
+
+  <button type="reset"
+          class="btn btn-outline-warning">Reset</button>
+
+</form>

@@ -1,0 +1,48 @@
+<%-partial ('header2.ejs')%>
+<h1>Aqui pantalla Ecuafest DetalleActividad</h1>
+
+<a href="/crearActividad">
+  <button type="button"  class="btn btn-primary">Crear Actividades</button>
+</a>
+
+
+<div id="contenedor" class="row">
+  <% for(var i=0; i<Actividades.length; i++) {%>
+  <div class="card" style="width: 20rem;">
+    <div class="card-block">
+
+      <h4 class="card-title"><%= Actividades[i].nombreActivity %></h4>
+      <p class="card-text">
+        <%= Actividades[i].direccionActivity %>
+      </p>
+      <p class="card-text">
+        <%= Actividades[i].descripcionActivity %>
+      </p>
+      <p class="card-text">
+        <%= Actividades[i].fechaActivity %>
+      </p>
+      <p class="card-text">
+        <%= Actividades[i].imagenActivity %>
+      </p>
+      <p class="card-text">
+        <%= Actividades[i].id %>
+      </p>
+
+
+      <form action="/Actividad/eliminarActividad" method="post">
+        <input hidden
+               type="text"
+               value="<%=Actividades[i].id%>"
+               name="id">
+        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
+        <a href="/ecuafestDetalleActividades?id=<%= Actividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Editar Actividad</button>
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+  <% } %>
+</div>
+
