@@ -50,6 +50,22 @@ module.exports = {
 
       });
   },
+  eliminarFestividad: function (req, res) {
+    var params = req.allParams();
+    sails.log.info("Parametros", params);
+    if (req.method == "POST" && params.id) {
+      Festividad.destroy({
+        id: params.id
+      }).exec(function (err, festividadBorrado) {
+        if (err)
+          return res.serverError(err);
+        return res.redirect("/listaFestividad");
+      });
+    }
+    else {
+      return res.badRequest();
+    }
+  }
 
 
 
