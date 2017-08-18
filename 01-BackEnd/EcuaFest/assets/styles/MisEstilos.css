@@ -1,5 +1,6 @@
 .cabecera {
   background-color: #17a05e;
+  width: 1400px;
 }
 #ecuafest{
   color: white;
@@ -45,4 +46,7 @@
 .botonVisitar {
   background-color: blue;
 }
-
+.card-img-top{
+  height: 260px;
+  width: 320px;
+}

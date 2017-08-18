@@ -65,9 +65,10 @@ module.exports = {
     else {
       return res.badRequest();
     }
+  },
+  dirigiraActividad: (req,res)=>{
+    return res.view('Festividad/DetalleActividad');
   }
-
-
 
 
 }

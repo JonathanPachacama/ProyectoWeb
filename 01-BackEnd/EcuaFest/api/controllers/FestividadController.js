@@ -48,5 +48,8 @@ module.exports = {
         else {
             return res.badRequest();
         }
+    },
+    dirigiraActividad: function (req, res) {
+        return res.view('Festividad/DetalleActividad');
     }
 };
