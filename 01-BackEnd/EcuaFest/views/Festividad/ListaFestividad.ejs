@@ -41,9 +41,14 @@
                value="<%=festividades[i].id%>"
                name="id">
         <button  type="submit" class="btn btn-outline-danger">Borrar</button>
+        <a href="/editarFestividades?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Editar</button>
+        </a>
         <a href="/?id=<%= festividades[i].id %>">
           <button  type="button"  class="btn btn-primary">Ver Detalles</button>
         </a>
+
+
         <br>
         <br>
 

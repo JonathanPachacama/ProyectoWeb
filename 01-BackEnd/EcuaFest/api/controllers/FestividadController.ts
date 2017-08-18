@@ -68,7 +68,42 @@ module.exports = {
   },
   dirigiraActividad: (req,res)=>{
     return res.view('Festividad/DetalleActividad');
+  },
+  editarFestividad:(req,res)=>{
+
+    let parametros = req.allParams();
+
+    if(parametros.nombreFest&&
+      parametros.lugarFest&&
+      parametros.mesFest&&
+      parametros.id){
+
+      Festividad.update({
+        id:parametros.id
+      },{
+        nombreFest:parametros.nombreFest,
+        lugarFest:parametros.lugarFest,
+        mesFest:parametros.mesFest
+      })
+        .exec((err,festividadEditado)=>{
+          if(err) return res.serverError(err);
+          if(festividadEditado){
+            //Si encontro
+            return res.redirect("/listaFestividad")
+          }else{
+            //No encontro
+            return res.notFound()
+          }
+        })
+    }else{
+      return res.badRequest()
+    }
+
+
+
+
   }
+
 
 
 }

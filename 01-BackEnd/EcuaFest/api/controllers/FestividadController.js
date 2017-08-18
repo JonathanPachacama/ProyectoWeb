@@ -51,5 +51,35 @@ module.exports = {
     },
     dirigiraActividad: function (req, res) {
         return res.view('Festividad/DetalleActividad');
+    },
+    editarFestividad: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.nombreFest &&
+            parametros.lugarFest &&
+            parametros.mesFest &&
+            parametros.id) {
+            Festividad.update({
+                id: parametros.id
+            }, {
+                nombreFest: parametros.nombreFest,
+                lugarFest: parametros.lugarFest,
+                mesFest: parametros.mesFest
+            })
+                .exec(function (err, festividadEditado) {
+                if (err)
+                    return res.serverError(err);
+                if (festividadEditado) {
+                    //Si encontro
+                    return res.redirect("/listaFestividad");
+                }
+                else {
+                    //No encontro
+                    return res.notFound();
+                }
+            });
+        }
+        else {
+            return res.badRequest();
+        }
     }
 };

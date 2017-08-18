@@ -35,4 +35,37 @@ module.exports = {
 
     }
   },
+  editarFestividad:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Festividad.findOne({
+        id:parametros.id
+      })
+        .exec((err,festividadesEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(festividadesEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/ActualizarFestividad',{
+              festividades:festividadesEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/crearUsuario')
+          }
+        });
+
+    }else{
+      return res.redirect('/crearUsuario')
+    }
+
+
+
+
+  }
+
 }
