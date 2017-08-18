@@ -7,3 +7,42 @@
 }
 .cabecera2{
 }
+.carousel {
+  background-color: #000000;
+  color: #000000;
+  height: 500px;
+  margin-bottom: 60px;
+}
+.d-block
+{
+  width: 100%;
+  height:500px;
+}
+
+.carousel-control-next-icon{
+  padding: 25px;
+
+}
+.carousel-control-prev-icon{
+  padding: 25px;
+  color: red;
+}
+
+.footer{
+
+  background: seagreen;
+  width: 1400px;
+  min-width: 1024px;
+  height: 200px;
+  text-align: center;
+  border-top: 5px solid black;
+  clear: both;
+  padding: 20px 0 0 0;
+  color: white;
+  font-size: 12px;
+  font-weight: normal;
+}
+.botonVisitar {
+  background-color: blue;
+}
+
