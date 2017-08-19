@@ -63,5 +63,40 @@ module.exports = {
     else {
       return res.badRequest();
     }
+  },
+  editarActividades:(req,res)=>{
+
+    let parametros = req.allParams();
+
+    if(parametros.nombreActivity&&
+      parametros.direccionActivity&&
+      parametros.descripcionActivity&&
+      parametros.id){
+
+      Actividad.update({
+        id:parametros.id
+      },{
+        nombreActivity:parametros.nombreActivity,
+        direccionActivity:parametros.direccionActivity,
+        descripcionActivity:parametros.descripcionActivity
+
+      })
+        .exec((err,actividadEditado)=>{
+          if(err) return res.serverError(err);
+          if(actividadEditado){
+            //Si encontro
+            return res.redirect("/ecuafestDetalleActividades")
+          }else{
+            //No encontro
+            return res.notFound()
+          }
+        })
+    }else{
+      return res.badRequest()
+    }
+
+
+
+
   }
 }

@@ -75,6 +75,7 @@ module.exports = {
             return res.redirect('/');
         }
     },
+<<<<<<< HEAD
     editarHotel: function (req, res) {
         var parametros = req.allParams();
         if (parametros.id) {
@@ -88,6 +89,21 @@ module.exports = {
                     //Si encontro
                     return res.view('Festividad/Hoteles/ActualizarHoteles', {
                         Hoteles: hotelEncontrado
+=======
+    editarActividades: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Actividad.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, actividadEncontrado) {
+                if (err)
+                    return res.serverError(err);
+                if (actividadEncontrado) {
+                    //Si encontro
+                    return res.view('Festividad/Actividades/ActualizarActividad', {
+                        Actividades: actividadEncontrado
+>>>>>>> refs/remotes/origin/02-FrontEnd
                     });
                 }
                 else {

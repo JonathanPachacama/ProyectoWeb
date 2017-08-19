@@ -4,7 +4,11 @@ declare var sails;
 declare var Usuario;
 declare var Gastronomia;
 declare var Festividad;
+<<<<<<< HEAD
 declare var Hotel;
+=======
+declare var Actividad;
+>>>>>>> refs/remotes/origin/02-FrontEnd
 
 module.exports = {
 
@@ -102,11 +106,16 @@ module.exports = {
 
 
   },
+<<<<<<< HEAD
   editarHotel:(req,res)=>{
+=======
+  editarActividades:(req,res)=>{
+>>>>>>> refs/remotes/origin/02-FrontEnd
 
     let parametros = req.allParams();
     if(parametros.id){
 
+<<<<<<< HEAD
       Hotel.findOne({
         id:parametros.id
       })
@@ -118,6 +127,19 @@ module.exports = {
 
             return res.view('Festividad/Hoteles/ActualizarHoteles',{
               Hoteles:hotelEncontrado
+=======
+      Actividad.findOne({
+        id:parametros.id
+      })
+        .exec((err,actividadEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(actividadEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Actividades/ActualizarActividad',{
+              Actividades:actividadEncontrado
+>>>>>>> refs/remotes/origin/02-FrontEnd
             })
 
           }else{
