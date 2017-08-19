@@ -30,8 +30,9 @@
       <p class="card-text">Mes :
         <%= festividades[i].mesFest %>
       </p>
-
     </div>
+
+
      <div class="row">
 
        <div class="col-md-12">
@@ -40,22 +41,69 @@
                type="text"
                value="<%=festividades[i].id%>"
                name="id">
-        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
-        <a href="/editarFestividades?id=<%= festividades[i].id %>">
-          <button  type="button"  class="btn btn-primary">Editar</button>
-        </a>
+        <!-- boton ver Actividades-->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
         <a href="/ecuafestDetalleActividades?id=<%= festividades[i].id %>">
           <button  type="button"  class="btn btn-primary">Ver Actividades</button>
         </a>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
 
+        <!-- boton ver hoteles-->
+        <br>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+        <a href="/ecuafestDetalleHoteles?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Ver Hoteles</button>
+        </a>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
 
+        <!-- boton ver gastronomia-->
+        <br>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+        <a href="/ecuafestDetalleGastronomia?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Ver Gastronomia</button>
+        </a>
+          </div>
+          <div class="col-md-4"></div>
+
+        </div>
+        <br>
+        <!--boton borrar-->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <button  type="submit" class="btn btn-warning">Borrar</button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <a href="/editarFestividades?id=<%= festividades[i].id %>">
+              <button  type="button"  class="btn btn-success">Editar</button>
+            </a>
+            </div>
+          <div class="col-md-4"></div>
+        </div>
         <br>
         <br>
-
       </form>
        </div>
 
      </div>
+
+
+
+
     </div>
     <br>
   </div>
