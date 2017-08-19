@@ -2,6 +2,8 @@
 declare var module;
 declare var sails;
 declare var Usuario;
+declare var Gastronomia;
+declare var Festividad;
 
 module.exports = {
 
@@ -61,6 +63,38 @@ module.exports = {
 
     }else{
       return res.redirect('/crearUsuario')
+    }
+
+
+
+
+  },
+  editarGastronomia:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Gastronomia.findOne({
+        id:parametros.id
+      })
+        .exec((err,gastronomiaEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(gastronomiaEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Gastronomia/ActualizarGastronoma',{
+              gastronomia:gastronomiaEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
     }
 
 

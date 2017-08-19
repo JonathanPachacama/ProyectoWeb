@@ -42,9 +42,7 @@ module.exports.routes = {
   '/ecuafestDetalleHoteles': {
     view: 'Festividad/EcuaFestDetalleHoteles'
   },
-  '/ecuafestDetalleGastronomia': {
-    view: 'Festividad/EcuaFestDetalleGastronomia'
-  },
+  '/ecuafestDetalleGastronomia': 'Gastronomia.listarGastronomia',
   '/ecuafestDetalle': {
     view: 'Festividad/EcuafestDetalleLayout'
   },
@@ -71,6 +69,8 @@ module.exports.routes = {
     'GastronomiaController.crearGastronomia',
   'get /editarFestividades':
     'VistaController.editarFestividad',
+  'get /editarGastronomia':
+    'VistaController.editarGastronomia'
 
 
 
