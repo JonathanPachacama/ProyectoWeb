@@ -75,21 +75,6 @@ module.exports = {
             return res.redirect('/');
         }
     },
-<<<<<<< HEAD
-    editarHotel: function (req, res) {
-        var parametros = req.allParams();
-        if (parametros.id) {
-            Hotel.findOne({
-                id: parametros.id
-            })
-                .exec(function (err, hotelEncontrado) {
-                if (err)
-                    return res.serverError(err);
-                if (hotelEncontrado) {
-                    //Si encontro
-                    return res.view('Festividad/Hoteles/ActualizarHoteles', {
-                        Hoteles: hotelEncontrado
-=======
     editarActividades: function (req, res) {
         var parametros = req.allParams();
         if (parametros.id) {
@@ -103,7 +88,31 @@ module.exports = {
                     //Si encontro
                     return res.view('Festividad/Actividades/ActualizarActividad', {
                         Actividades: actividadEncontrado
->>>>>>> refs/remotes/origin/02-FrontEnd
+                    });
+                }
+                else {
+                    //No encontro
+                    return res.redirect('/');
+                }
+            });
+        }
+        else {
+            return res.redirect('/');
+        }
+    },
+    editarHotel: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Hotel.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, hotelEncontrado) {
+                if (err)
+                    return res.serverError(err);
+                if (hotelEncontrado) {
+                    //Si encontro
+                    return res.view('Festividad/Hoteles/ActualizarHoteles', {
+                        Hoteles: hotelEncontrado
                     });
                 }
                 else {

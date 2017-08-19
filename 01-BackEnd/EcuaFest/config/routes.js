@@ -71,15 +71,10 @@ module.exports.routes = {
     'VistaController.editarFestividad',
   'get /editarGastronomia':
     'VistaController.editarGastronomia',
-<<<<<<< HEAD
-=======
+
   'get /editarActividades':
-    'VistaController.editarActividades'
+    'VistaController.editarActividades',
 
-
-
-
->>>>>>> refs/remotes/origin/02-FrontEnd
 
   '/crearHotel': {
     view: 'Festividad/Hoteles/CrearHoteles'

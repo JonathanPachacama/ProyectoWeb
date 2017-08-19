@@ -4,11 +4,8 @@ declare var sails;
 declare var Usuario;
 declare var Gastronomia;
 declare var Festividad;
-<<<<<<< HEAD
-declare var Hotel;
-=======
 declare var Actividad;
->>>>>>> refs/remotes/origin/02-FrontEnd
+declare var Hotel;
 
 module.exports = {
 
@@ -106,28 +103,11 @@ module.exports = {
 
 
   },
-<<<<<<< HEAD
-  editarHotel:(req,res)=>{
-=======
   editarActividades:(req,res)=>{
->>>>>>> refs/remotes/origin/02-FrontEnd
 
     let parametros = req.allParams();
     if(parametros.id){
 
-<<<<<<< HEAD
-      Hotel.findOne({
-        id:parametros.id
-      })
-        .exec((err,hotelEncontrado)=>{
-          if(err) return res.serverError(err);
-
-          if(hotelEncontrado){
-            //Si encontro
-
-            return res.view('Festividad/Hoteles/ActualizarHoteles',{
-              Hoteles:hotelEncontrado
-=======
       Actividad.findOne({
         id:parametros.id
       })
@@ -139,7 +119,39 @@ module.exports = {
 
             return res.view('Festividad/Actividades/ActualizarActividad',{
               Actividades:actividadEncontrado
->>>>>>> refs/remotes/origin/02-FrontEnd
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
+
+
+
+
+  },
+
+  editarHotel:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Hotel.findOne({
+        id:parametros.id
+      })
+        .exec((err,hotelEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(hotelEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Hoteles/ActualizarHoteles',{
+              Hoteles:hotelEncontrado
             })
 
           }else{
@@ -156,5 +168,4 @@ module.exports = {
 
 
   }
-
 }
