@@ -34,20 +34,17 @@ module.exports = {
   },
 
   listarFestividad:(req,res)=> {
-
     let parametros = req.allParams();
-
     sails.log.info("Parametros", parametros);
-    Festividad
-      .find()
+    Festividad.find()
       .exec((err, festividades) => {
         if (err) return res.negotiate(err);
-        else {
+        else
+          {
           return res.view('Festividad/ListaFestividad', {
             festividades: festividades
           });
         }
-
       });
   },
   eliminarFestividad: function (req, res) {

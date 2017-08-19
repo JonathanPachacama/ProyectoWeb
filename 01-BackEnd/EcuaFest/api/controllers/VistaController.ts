@@ -5,6 +5,7 @@ declare var Usuario;
 declare var Gastronomia;
 declare var Festividad;
 declare var Actividad;
+declare var Hotel;
 
 module.exports = {
 
@@ -133,6 +134,38 @@ module.exports = {
 
 
 
-  }
+  },
 
+  editarHotel:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Hotel.findOne({
+        id:parametros.id
+      })
+        .exec((err,hotelEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(hotelEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Hoteles/ActualizarHoteles',{
+              Hoteles:hotelEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
+
+
+
+
+  }
 }

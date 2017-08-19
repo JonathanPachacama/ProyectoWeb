@@ -39,10 +39,10 @@ module.exports.routes = {
 
   'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
 
-  '/ecuafestDetalleHoteles': {
-    view: 'Festividad/EcuaFestDetalleHoteles'
-  },
+
   '/ecuafestDetalleGastronomia': 'Gastronomia.listarGastronomia',
+  '/ecuafestDetalleHoteles': 'Hotel.listarHotel',
+
   '/ecuafestDetalle': {
     view: 'Festividad/EcuafestDetalleLayout'
   },
@@ -71,13 +71,18 @@ module.exports.routes = {
     'VistaController.editarFestividad',
   'get /editarGastronomia':
     'VistaController.editarGastronomia',
+
   'get /editarActividades':
-    'VistaController.editarActividades'
+    'VistaController.editarActividades',
 
 
-
-
-
+  '/crearHotel': {
+    view: 'Festividad/Hoteles/CrearHoteles'
+  },
+  'get /crearHotel':
+    'HotelController.crearHotel',
+  'get /editarHotel':
+    'VistaController.editarHotel'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
