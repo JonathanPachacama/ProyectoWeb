@@ -27,7 +27,7 @@ module.exports = {
             if (err)
                 return res.negotiate(err);
             else {
-                return res.view('Festividad/EcuafestDetalleHoteles', {
+                return res.view('Festividad/EcuaFestDetalleHoteles', {
                     Hoteles: Hoteles
                 });
             }
@@ -49,7 +49,7 @@ module.exports = {
             return res.badRequest();
         }
     },
-    editarHotel: function (req, res) {
+    editarHoteles: function (req, res) {
         var parametros = req.allParams();
         if (parametros.nombreHotel &&
             parametros.direccionHotel &&

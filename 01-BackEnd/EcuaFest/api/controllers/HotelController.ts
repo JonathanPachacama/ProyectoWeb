@@ -40,7 +40,7 @@ module.exports = {
       .exec((err, Hoteles) => {
         if (err) return res.negotiate(err);
         else {
-          return res.view('Festividad/EcuafestDetalleHoteles', {
+          return res.view('Festividad/EcuaFestDetalleHoteles', {
             Hoteles: Hoteles
           });
         }
@@ -66,7 +66,7 @@ module.exports = {
     }
   },
 
-  editarHotel:(req,res)=>{
+  editarHoteles:(req,res)=>{
 
     let parametros = req.allParams();
 

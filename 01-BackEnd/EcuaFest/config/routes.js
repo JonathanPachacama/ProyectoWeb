@@ -38,10 +38,8 @@ module.exports.routes = {
   'get /listaFestividad': 'FestividadController.listarFestividad',
 
   'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
-
-
   '/ecuafestDetalleGastronomia': 'Gastronomia.listarGastronomia',
-  '/ecuafestDetalleHoteles': 'Hotel.listarHotel',
+  'get /ecuafestDetalleHoteles': 'HotelController.listarHotel',
 
   '/ecuafestDetalle': {
     view: 'Festividad/EcuafestDetalleLayout'
@@ -67,21 +65,19 @@ module.exports.routes = {
   },
   'get /crearGastronomia':
     'GastronomiaController.crearGastronomia',
+  '/crearHotel': {
+    view: 'Festividad/Hoteles/CrearHotel'
+  },
+  'get /crearHotel':
+    'HotelController.crearHotel',
+
   'get /editarFestividades':
     'VistaController.editarFestividad',
   'get /editarGastronomia':
     'VistaController.editarGastronomia',
-
   'get /editarActividades':
     'VistaController.editarActividades',
-
-
-  '/crearHotel': {
-    view: 'Festividad/Hoteles/CrearHoteles'
-  },
-  'get /crearHotel':
-    'HotelController.crearHotel',
-  'get /editarHotel':
+  'get /editarHoteles':
     'VistaController.editarHotel'
   /***************************************************************************
   *                                                                          *

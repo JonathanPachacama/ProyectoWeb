@@ -111,7 +111,7 @@ module.exports = {
                     return res.serverError(err);
                 if (hotelEncontrado) {
                     //Si encontro
-                    return res.view('Festividad/Hoteles/ActualizarHoteles', {
+                    return res.view('Festividad/Hoteles/ActualizarHotel', {
                         Hoteles: hotelEncontrado
                     });
                 }

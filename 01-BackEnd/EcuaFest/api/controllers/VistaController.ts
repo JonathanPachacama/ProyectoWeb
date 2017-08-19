@@ -135,7 +135,6 @@ module.exports = {
 
 
   },
-
   editarHotel:(req,res)=>{
 
     let parametros = req.allParams();
@@ -150,7 +149,7 @@ module.exports = {
           if(hotelEncontrado){
             //Si encontro
 
-            return res.view('Festividad/Hoteles/ActualizarHoteles',{
+            return res.view('Festividad/Hoteles/ActualizarHotel',{
               Hoteles:hotelEncontrado
             })
 
