@@ -68,7 +68,10 @@ module.exports.routes = {
     view: 'Festividad/Gastronomia/CrearGastronomia'
   },
   'get /crearGastronomia':
-    'GastronomiaController.crearGastronomia'
+    'GastronomiaController.crearGastronomia',
+  'get /editarFestividades':
+    'VistaController.editarFestividad',
+
 
 
 

@@ -1,0 +1,55 @@
+<h1>Usted esta editando a:
+  <%= festividades.nombreFest %>
+</h1>
+
+<form action="Festividad/editarFestividad" method="post">
+
+
+  <input hidden
+         class="form-control"
+         type="text"
+         id="id"
+         name="id"
+         value="<%= festividades.id %>">
+
+
+  <div class="form-group row">
+    <label for="nombreFest" class="col-2 col-form-label">Nombre Festividad</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="text"
+             placeholder="Ingrese nombre Festividad"
+             id="nombreFest"
+             name="nombreFest"
+             value="<%= festividades.nombreFest %>"
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="lugarFest" class="col-2 col-form-label">Lugar Festividad</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+             placeholder="Ingrese sus Apellidos"
+             name="lugarFest"
+             id="lugarFest"
+             value="<%= festividades.lugarFest %>"
+      >
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="mesFest" class="col-2 col-form-label">Mes de Festividad</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Ingrese su correo" id="mesFest"
+             name="mesFest"
+             value="<%= festividades.mesFest %>">
+    </div>
+  </div>
+
+  <button
+    class="btn btn-outline-success">Editar</button>
+
+
+</form>

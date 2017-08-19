@@ -1,45 +1,113 @@
-<P>Aqui va la pantalla de Lista de festividad</P>
-
-<a href="/ecuafestDetalle">Busqueda de actividades</a>
-
+<br>
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+<h1>FESTIVIDADES</h1>
+    <br>
+    <br>
 <a href="/crearFestividad">
   <button type="button"  class="btn btn-primary">Crear Festividad</button>
-</a>
-<br><br>
+</a></div>
+  <div class="col-md-4"></div>
+</div>
 
+<br>
+<br>
+
+<div class="container">
 <div id="contenedor" class="row">
   <% for(var i=0; i<festividades.length; i++) {%>
+  <div class="col-sm-4">
   <div class="card" style="width: 20rem;">
+    <img class="card-img-top" src="<%=festividades[i].imagenFest%>" alt="">
     <div class="card-block">
 
       <h4 class="card-title"><%= festividades[i].nombreFest %></h4>
-      <p class="card-text">
+      <p class="card-text">Lugar :
         <%= festividades[i].lugarFest %>
       </p>
-      <p class="card-text">
+      <p class="card-text">Mes :
         <%= festividades[i].mesFest %>
       </p>
-      <p class="card-text">
-        <%= festividades[i].imagenFest %>
-      </p>
-      <p class="card-text">
-        <%= festividades[i].id %>
-      </p>
+    </div>
 
 
+     <div class="row">
+
+       <div class="col-md-12">
       <form action="/Festividad/eliminarFestividad" method="post">
         <input hidden
                type="text"
                value="<%=festividades[i].id%>"
                name="id">
-        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
+        <!-- boton ver Actividades-->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
         <a href="/ecuafestDetalleActividades?id=<%= festividades[i].id %>">
-          <button  type="button"  class="btn btn-primary">Editar</button>
+          <button  type="button"  class="btn btn-primary">Ver Actividades</button>
         </a>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
 
+        <!-- boton ver hoteles-->
+        <br>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+        <a href="/ecuafestDetalleHoteles?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Ver Hoteles</button>
+        </a>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+        <!-- boton ver gastronomia-->
+        <br>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+        <a href="/ecuafestDetalleGastronomia?id=<%= festividades[i].id %>">
+          <button  type="button"  class="btn btn-primary">Ver Gastronomia</button>
+        </a>
+          </div>
+          <div class="col-md-4"></div>
+
+        </div>
+        <br>
+        <!--boton borrar-->
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <button  type="submit" class="btn btn-warning">Borrar</button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <a href="/editarFestividades?id=<%= festividades[i].id %>">
+              <button  type="button"  class="btn btn-success">Editar</button>
+            </a>
+            </div>
+          <div class="col-md-4"></div>
+        </div>
+        <br>
+        <br>
       </form>
+       </div>
+
+     </div>
+
+
+
 
     </div>
+    <br>
   </div>
+
   <% } %>
+</div>
 </div>
