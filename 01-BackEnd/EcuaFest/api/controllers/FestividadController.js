@@ -21,8 +21,7 @@ module.exports = {
     listarFestividad: function (req, res) {
         var parametros = req.allParams();
         sails.log.info("Parametros", parametros);
-        Festividad
-            .find()
+        Festividad.find()
             .exec(function (err, festividades) {
             if (err)
                 return res.negotiate(err);

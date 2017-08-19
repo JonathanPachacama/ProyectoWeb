@@ -49,5 +49,30 @@ module.exports = {
         else {
             return res.redirect('/crearUsuario');
         }
+    },
+    editarHotel: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Hotel.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, hotelesEncontrados) {
+                if (err)
+                    return res.serverError(err);
+                if (hotelesEncontrados) {
+                    //Si encontro
+                    return res.view('Festividad/Hoteles/editarHoteles', {
+                        hoteles: hotelesEncontrados
+                    });
+                }
+                else {
+                    //No encontro
+                    return res.redirect('/crearHotel');
+                }
+            });
+        }
+        else {
+            return res.redirect('/crearUsuario');
+        }
     }
 };

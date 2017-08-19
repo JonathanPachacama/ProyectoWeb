@@ -66,6 +66,40 @@ module.exports = {
 
 
 
+  },
+
+
+  editarHotel:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Hotel.findOne({
+        id:parametros.id
+      })
+        .exec((err,hotelesEncontrados)=>{
+          if(err) return res.serverError(err);
+
+          if(hotelesEncontrados){
+            //Si encontro
+
+            return res.view('Festividad/Hoteles/editarHoteles',{
+              hoteles:hotelesEncontrados
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/crearHotel')
+          }
+        });
+
+    }else{
+      return res.redirect('/crearUsuario')
+    }
+
+
+
+
   }
 
 }

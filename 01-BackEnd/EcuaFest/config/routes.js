@@ -31,46 +31,57 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
+// inicio
 
   'get /': {
     view: 'homepage'
   },
-  'get /listaFestividad': 'FestividadController.listarFestividad',
 
-  'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
-
-  '/ecuafestDetalleHoteles': {
-    view: 'Festividad/EcuaFestDetalleHoteles'
-  },
-  '/ecuafestDetalleGastronomia': {
-    view: 'Festividad/EcuaFestDetalleGastronomia'
-  },
   '/ecuafestDetalle': {
     view: 'Festividad/EcuafestDetalleLayout'
   },
 
-  'get /oculto':
-    'VistaController.login',
 
-  '/crearFestividad': {
-    view: 'Festividad/CrearFestividad'
-  },
-  'get /crearFestividad':
-    'FestividadController.crearFestividad',
+  //FESTIVIDADES
 
-  '/crearActividad': {
-    view: 'Festividad/Actividades/CrearActividad'
+  'get /listaFestividad': 'FestividadController.listarFestividad',
+  'get /editarFestividades': 'VistaController.editarFestividad',
+  '/crearFestividad': {view: 'Festividad/CrearFestividad'},
+  'get /crearFestividad': 'FestividadController.crearFestividad',
+
+  //HOTELES
+  '/ecuafestDetalleHoteles': 'HotelController.listarHotel',
+  'get /editarHoteles': 'VistaController.editarHotel',
+  '/crearHotel': {view: 'Festividad/Hoteles/crearHoteles'},
+  'get /crearHotel': 'HotelController.crearHotel',
+
+
+
+  //GATRONOMIA
+  '/ecuafestDetalleGastronomia': {
+    view: 'Festividad/EcuaFestDetalleGastronomia'
   },
-  'get /crearActividad':
-    'ActividadController.crearActividad',
 
   '/crearGastronomia': {
     view: 'Festividad/Gastronomia/CrearGastronomia'
   },
   'get /crearGastronomia':
     'GastronomiaController.crearGastronomia',
-  'get /editarFestividades':
-    'VistaController.editarFestividad',
+
+
+  //Login
+
+  'get /oculto':
+    'VistaController.login',
+//ACTIVIDAD
+  'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
+  '/crearActividad': {
+    view: 'Festividad/Actividades/CrearActividad'
+  },
+  'get /crearActividad':
+    'ActividadController.crearActividad',
+
+
 
 
 

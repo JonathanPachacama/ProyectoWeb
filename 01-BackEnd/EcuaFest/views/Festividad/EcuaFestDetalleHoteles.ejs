@@ -1,4 +1,46 @@
-
 <%-partial ('header2.ejs')%>
 
-<P>Aqui va la pantalla de Hoteles</P>
+<a href="/crearHotel">
+  <button type="button"  class="btn btn-primary">Crear Hoteles</button>
+</a>
+
+
+<div id="contenedor" class="row">
+  <% for(var i=0; i<Hoteles.length; i++) {%>
+  <div class="card" style="width: 20rem;">
+    <div class="card-block">
+
+      <h4 class="card-title"><%= Hoteles[i].nombreHotel %></h4>
+      <p class="card-text">
+        <%= Hoteles[i].direccionHotel %>
+      </p>
+      <p class="card-text">
+        <%= Hoteles[i].precioEstadia %>
+      </p>
+      <p class="card-text">
+        <%= Hoteles[i].fechaActivity %>
+      </p>
+      <p class="card-text">
+        <%= Hoteles[i].imagenHotel %>
+      </p>
+      <p class="card-text">
+        <%= Hoteles[i].idFest %>
+      </p>
+
+
+      <form action="/Hotel/eliminarHotel" method="post">
+        <input hidden
+               type="text"
+               value="<%=Hoteles[i].id%>"
+               name="id">
+        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
+        <a href="/editarHoteles?id=<%= Hoteles[i].id %>">
+          <button  type="button"  class="btn btn-primary">Editar Hotel</button>
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+  <% } %>
+</div>
