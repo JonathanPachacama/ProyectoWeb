@@ -15,7 +15,7 @@ module.exports = {
       type:'string'
     },
     precioEstadia:{
-      type:'number'
+      type:'string'
     },
     imagenHotel:{
       type:'string'

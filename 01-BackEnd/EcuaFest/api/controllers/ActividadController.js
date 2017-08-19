@@ -7,7 +7,8 @@ module.exports = {
             direccionActivity: parametros.direccionActivity,
             descripcionActivity: parametros.descripcionActivity,
             fechaActivity: parametros.fechaActivity,
-            imagenActivity: parametros.imagenActivity
+            imagenActivity: parametros.imagenActivity,
+            idFest: parametros.idFest
         };
         Actividad.create(nuevaActividad)
             .exec(function (error, ActividadCreada) {
