@@ -1,6 +1,78 @@
 <%-partial ('header2.ejs')%>
-<P>Aqui va la pantalla de gastronomia</P>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>GASTRONOMIA</h1>
+    <br>
+    <br>
+    <a href="/crearGastronomia">
+      <button type="button"  class="btn btn-primary">Crear Gastronomia</button>
+    </a></div>
+  <div class="col-md-4"></div>
+</div>
 
-<a href="/crearGastronomia">
-  <button type="button"  class="btn btn-primary">Crear Gastronomia</button>
-</a>
+<br>
+<br>
+
+<div class="container">
+  <div id="contenedor" class="row">
+    <% for(var i=0; i<gastronomia.length; i++) {%>
+    <div class="col-sm-4">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="<%=gastronomia[i].imagenFood%>" alt="">
+        <div class="card-block">
+
+          <h4 class="card-title"><%= gastronomia[i].nombreFood %></h4>
+          <p class="card-text">Lugar :
+            <%= gastronomia[i].descripcionFood %>
+          </p>
+
+        </div>
+
+
+        <div class="row">
+
+          <div class="col-md-12">
+            <form action="/Gastronomia/eliminarGastronomia" method="post">
+              <input hidden
+                     type="text"
+                     value="<%=gastronomia[i].id%>"
+                     name="id">
+              <br>
+              <!--boton borrar-->
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <button  type="submit" class="btn btn-warning">Borrar</button>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <a href="/editarGastronomia?id=<%= gastronomia[i].id %>">
+                    <button  type="button"  class="btn btn-success">Editar</button>
+                  </a>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+      <br>
+    </div>
+
+    <% } %>
+  </div>
+</div>
+

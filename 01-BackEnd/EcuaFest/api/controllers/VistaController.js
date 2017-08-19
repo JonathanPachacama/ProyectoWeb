@@ -49,5 +49,80 @@ module.exports = {
         else {
             return res.redirect('/crearUsuario');
         }
+    },
+    editarGastronomia: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Gastronomia.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, gastronomiaEncontrado) {
+                if (err)
+                    return res.serverError(err);
+                if (gastronomiaEncontrado) {
+                    //Si encontro
+                    return res.view('Festividad/Gastronomia/ActualizarGastronoma', {
+                        gastronomia: gastronomiaEncontrado
+                    });
+                }
+                else {
+                    //No encontro
+                    return res.redirect('/');
+                }
+            });
+        }
+        else {
+            return res.redirect('/');
+        }
+    },
+    editarActividades: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Actividad.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, actividadEncontrado) {
+                if (err)
+                    return res.serverError(err);
+                if (actividadEncontrado) {
+                    //Si encontro
+                    return res.view('Festividad/Actividades/ActualizarActividad', {
+                        Actividades: actividadEncontrado
+                    });
+                }
+                else {
+                    //No encontro
+                    return res.redirect('/');
+                }
+            });
+        }
+        else {
+            return res.redirect('/');
+        }
+    },
+    editarHotel: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Hotel.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, hotelEncontrado) {
+                if (err)
+                    return res.serverError(err);
+                if (hotelEncontrado) {
+                    //Si encontro
+                    return res.view('Festividad/Hoteles/ActualizarHoteles', {
+                        Hoteles: hotelEncontrado
+                    });
+                }
+                else {
+                    //No encontro
+                    return res.redirect('/');
+                }
+            });
+        }
+        else {
+            return res.redirect('/');
+        }
     }
 };

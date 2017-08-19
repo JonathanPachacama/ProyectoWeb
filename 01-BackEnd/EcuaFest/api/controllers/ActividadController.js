@@ -34,4 +34,50 @@ module.exports = {
             }
         });
     },
+    eliminarActividad: function (req, res) {
+        var params = req.allParams();
+        sails.log.info("Parametros", params);
+        if (req.method == "POST" && params.id) {
+            Actividad.destroy({
+                id: params.id
+            }).exec(function (err, ActividadBorrado) {
+                if (err)
+                    return res.serverError(err);
+                return res.redirect("/ecuafestDetalleActividades");
+            });
+        }
+        else {
+            return res.badRequest();
+        }
+    },
+    editarActividades: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.nombreActivity &&
+            parametros.direccionActivity &&
+            parametros.descripcionActivity &&
+            parametros.id) {
+            Actividad.update({
+                id: parametros.id
+            }, {
+                nombreActivity: parametros.nombreActivity,
+                direccionActivity: parametros.direccionActivity,
+                descripcionActivity: parametros.descripcionActivity
+            })
+                .exec(function (err, actividadEditado) {
+                if (err)
+                    return res.serverError(err);
+                if (actividadEditado) {
+                    //Si encontro
+                    return res.redirect("/ecuafestDetalleActividades");
+                }
+                else {
+                    //No encontro
+                    return res.notFound();
+                }
+            });
+        }
+        else {
+            return res.badRequest();
+        }
+    }
 };

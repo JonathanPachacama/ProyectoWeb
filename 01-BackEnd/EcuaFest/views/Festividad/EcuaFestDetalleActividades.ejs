@@ -1,48 +1,84 @@
 <%-partial ('header2.ejs')%>
-<h1>Aqui pantalla Ecuafest DetalleActividad</h1>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>Actividades</h1>
+    <br>
+    <br>
+    <a href="/crearActividad">
+      <button type="button"  class="btn btn-primary">Crear Actividad</button>
+    </a></div>
+  <div class="col-md-4"></div>
+</div>
 
-<a href="/crearActividad">
-  <button type="button"  class="btn btn-primary">Crear Actividades</button>
-</a>
+<br>
+<br>
+
+<div class="container">
+  <div id="contenedor" class="row">
+    <% for(var i=0; i<Actividades.length; i++) {%>
+    <div class="col-sm-4">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="<%=Actividades[i].imagenActivity%>" alt="">
+        <div class="card-block">
+
+          <h4 class="card-title"><%= Actividades[i].nombreActivity %></h4>
+          <p class="card-text">Lugar :
+            <%= Actividades[i].direccionActivity %>
+          </p>
+          <p class="card-text">Descripcion :
+            <%= Actividades[i].descripcionActivity %>
+          </p>
+          <p class="card-text">Fecha :
+            <%= Actividades[i].fechaActivity %>
+          </p>
+
+        </div>
 
 
-<div id="contenedor" class="row">
-  <% for(var i=0; i<Actividades.length; i++) {%>
-  <div class="card" style="width: 20rem;">
-    <div class="card-block">
+        <div class="row">
 
-      <h4 class="card-title"><%= Actividades[i].nombreActivity %></h4>
-      <p class="card-text">
-        <%= Actividades[i].direccionActivity %>
-      </p>
-      <p class="card-text">
-        <%= Actividades[i].descripcionActivity %>
-      </p>
-      <p class="card-text">
-        <%= Actividades[i].fechaActivity %>
-      </p>
-      <p class="card-text">
-        <%= Actividades[i].imagenActivity %>
-      </p>
-      <p class="card-text">
-        <%= Actividades[i].id %>
-      </p>
+          <div class="col-md-12">
+            <form action="/Actividad/eliminarActividad" method="post">
+              <input hidden
+                     type="text"
+                     value="<%=Actividades[i].id%>"
+                     name="id">
+              <br>
+              <!--boton borrar-->
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <button  type="submit" class="btn btn-warning">Borrar</button>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+              <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <a href="/editarActividades?id=<%= Actividades[i].id %>">
+                    <button  type="button"  class="btn btn-success">Editar</button>
+                  </a>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+
+        </div>
 
 
-      <form action="/Actividad/eliminarActividad" method="post">
-        <input hidden
-               type="text"
-               value="<%=Actividades[i].id%>"
-               name="id">
-        <button  type="submit" class="btn btn-outline-danger">Borrar</button>
-        <a href="/ecuafestDetalleActividades?id=<%= Actividades[i].id %>">
-          <button  type="button"  class="btn btn-primary">Editar Actividad</button>
-        </a>
 
-      </form>
 
+      </div>
+      <br>
     </div>
+
+    <% } %>
   </div>
-  <% } %>
 </div>
 

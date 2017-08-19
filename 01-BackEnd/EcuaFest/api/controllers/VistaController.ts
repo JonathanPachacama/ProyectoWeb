@@ -2,6 +2,10 @@
 declare var module;
 declare var sails;
 declare var Usuario;
+declare var Gastronomia;
+declare var Festividad;
+declare var Actividad;
+declare var Hotel;
 
 module.exports = {
 
@@ -66,6 +70,102 @@ module.exports = {
 
 
 
-  }
+  },
+  editarGastronomia:(req,res)=>{
 
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Gastronomia.findOne({
+        id:parametros.id
+      })
+        .exec((err,gastronomiaEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(gastronomiaEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Gastronomia/ActualizarGastronoma',{
+              gastronomia:gastronomiaEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
+
+
+
+
+  },
+  editarActividades:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Actividad.findOne({
+        id:parametros.id
+      })
+        .exec((err,actividadEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(actividadEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Actividades/ActualizarActividad',{
+              Actividades:actividadEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
+
+
+
+
+  },
+
+  editarHotel:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Hotel.findOne({
+        id:parametros.id
+      })
+        .exec((err,hotelEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(hotelEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Hoteles/ActualizarHoteles',{
+              Hoteles:hotelEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
+
+
+
+
+  }
 }

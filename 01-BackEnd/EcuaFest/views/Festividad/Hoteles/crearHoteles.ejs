@@ -1,0 +1,66 @@
+<br>
+<h1>Crear Hotel</h1>
+<br>
+<br>
+
+<form action="/Hotel/crearHotel" method="post">
+
+
+  <div class="form-group row">
+    <label for="nombreHotel" class="col-2 col-form-label">Nombre Hotel</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="text"
+             placeholder="Ingrese nombre del Hotel"
+             id="nombreHotel"
+             name="nombreHotel"
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="direccionHotel" class="col-2 col-form-label">Direccion del Hotel</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+             placeholder="Ingrese Direccion del Hotel"
+             name="direccionHotel"
+             id="direccionHotel">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="precioEstadia" class="col-2 col-form-label">Precio de la estadia</label>
+    <div class="col-10">
+      <input class="form-control" type="number" placeholder="Ingrese el precio de la estadia"
+             id="precioEstadia"
+             name="precioEstadia">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="imagenHotel" class="col-2 col-form-label">Imagen</label>
+    <div class="col-10">
+      <input class="form-control" type="text" placeholder="Ingrese el url del Hotel"
+             name="imagenHotel"
+             id="imagenHotel">
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <button
+        class="btn btn-outline-success">Crear</button>
+
+      <button type="reset"
+              class="btn btn-outline-warning">Reset</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</form>
+<br>
+<br>
