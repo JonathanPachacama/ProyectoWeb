@@ -74,5 +74,30 @@ module.exports = {
         else {
             return res.redirect('/');
         }
+    },
+    editarActividades: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            Actividad.findOne({
+                id: parametros.id
+            })
+                .exec(function (err, actividadEncontrado) {
+                if (err)
+                    return res.serverError(err);
+                if (actividadEncontrado) {
+                    //Si encontro
+                    return res.view('Festividad/Actividades/ActualizarActividad', {
+                        Actividades: actividadEncontrado
+                    });
+                }
+                else {
+                    //No encontro
+                    return res.redirect('/');
+                }
+            });
+        }
+        else {
+            return res.redirect('/');
+        }
     }
 };

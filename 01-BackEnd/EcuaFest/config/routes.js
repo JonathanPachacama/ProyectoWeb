@@ -70,7 +70,9 @@ module.exports.routes = {
   'get /editarFestividades':
     'VistaController.editarFestividad',
   'get /editarGastronomia':
-    'VistaController.editarGastronomia'
+    'VistaController.editarGastronomia',
+  'get /editarActividades':
+    'VistaController.editarActividades'
 
 
 

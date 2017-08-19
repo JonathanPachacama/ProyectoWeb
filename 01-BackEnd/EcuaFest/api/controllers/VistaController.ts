@@ -4,6 +4,7 @@ declare var sails;
 declare var Usuario;
 declare var Gastronomia;
 declare var Festividad;
+declare var Actividad;
 
 module.exports = {
 
@@ -85,6 +86,38 @@ module.exports = {
 
             return res.view('Festividad/Gastronomia/ActualizarGastronoma',{
               gastronomia:gastronomiaEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
+
+
+
+
+  },
+  editarActividades:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Actividad.findOne({
+        id:parametros.id
+      })
+        .exec((err,actividadEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(actividadEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Actividades/ActualizarActividad',{
+              Actividades:actividadEncontrado
             })
 
           }else{
