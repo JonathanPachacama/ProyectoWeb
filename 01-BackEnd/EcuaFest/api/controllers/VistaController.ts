@@ -2,6 +2,9 @@
 declare var module;
 declare var sails;
 declare var Usuario;
+declare var Gastronomia;
+declare var Festividad;
+declare var Hotel;
 
 module.exports = {
 
@@ -67,8 +70,38 @@ module.exports = {
 
 
   },
+  editarGastronomia:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Gastronomia.findOne({
+        id:parametros.id
+      })
+        .exec((err,gastronomiaEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(gastronomiaEncontrado){
+            //Si encontro
+
+            return res.view('Festividad/Gastronomia/ActualizarGastronoma',{
+              gastronomia:gastronomiaEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/')
+          }
+        });
+
+    }else{
+      return res.redirect('/')
+    }
 
 
+
+
+  },
   editarHotel:(req,res)=>{
 
     let parametros = req.allParams();
@@ -77,24 +110,24 @@ module.exports = {
       Hotel.findOne({
         id:parametros.id
       })
-        .exec((err,hotelesEncontrados)=>{
+        .exec((err,hotelEncontrado)=>{
           if(err) return res.serverError(err);
 
-          if(hotelesEncontrados){
+          if(hotelEncontrado){
             //Si encontro
 
-            return res.view('Festividad/Hoteles/editarHoteles',{
-              hoteles:hotelesEncontrados
+            return res.view('Festividad/Hoteles/ActualizarHoteles',{
+              Hoteles:hotelEncontrado
             })
 
           }else{
             //No encontro
-            return res.redirect('/crearHotel')
+            return res.redirect('/')
           }
         });
 
     }else{
-      return res.redirect('/crearUsuario')
+      return res.redirect('/')
     }
 
 

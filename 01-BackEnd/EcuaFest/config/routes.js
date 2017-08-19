@@ -31,62 +31,54 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-// inicio
 
   'get /': {
     view: 'homepage'
   },
+  'get /listaFestividad': 'FestividadController.listarFestividad',
+
+  'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
+
+
+  '/ecuafestDetalleGastronomia': 'Gastronomia.listarGastronomia',
+  '/ecuafestDetalleHoteles': 'Hotel.listarHotel',
 
   '/ecuafestDetalle': {
     view: 'Festividad/EcuafestDetalleLayout'
   },
 
-
-  //FESTIVIDADES
-
-  'get /listaFestividad': 'FestividadController.listarFestividad',
-  'get /editarFestividades': 'VistaController.editarFestividad',
-  '/crearFestividad': {view: 'Festividad/CrearFestividad'},
-  'get /crearFestividad': 'FestividadController.crearFestividad',
-
-  //HOTELES
-  '/ecuafestDetalleHoteles': 'HotelController.listarHotel',
-  'get /editarHoteles': 'VistaController.editarHotel',
-  '/crearHotel': {view: 'Festividad/Hoteles/crearHoteles'},
-  'get /crearHotel': 'HotelController.crearHotel',
-
-
-
-  //GATRONOMIA
-  '/ecuafestDetalleGastronomia': {
-    view: 'Festividad/EcuaFestDetalleGastronomia'
-  },
-
-  '/crearGastronomia': {
-    view: 'Festividad/Gastronomia/CrearGastronomia'
-  },
-  'get /crearGastronomia':
-    'GastronomiaController.crearGastronomia',
-
-
-  //Login
-
   'get /oculto':
     'VistaController.login',
-//ACTIVIDAD
-  'get /ecuafestDetalleActividades': 'ActividadController.listarActividad',
+
+  '/crearFestividad': {
+    view: 'Festividad/CrearFestividad'
+  },
+  'get /crearFestividad':
+    'FestividadController.crearFestividad',
+
   '/crearActividad': {
     view: 'Festividad/Actividades/CrearActividad'
   },
   'get /crearActividad':
     'ActividadController.crearActividad',
 
+  '/crearGastronomia': {
+    view: 'Festividad/Gastronomia/CrearGastronomia'
+  },
+  'get /crearGastronomia':
+    'GastronomiaController.crearGastronomia',
+  'get /editarFestividades':
+    'VistaController.editarFestividad',
+  'get /editarGastronomia':
+    'VistaController.editarGastronomia',
 
-
-
-
-
-
+  '/crearHotel': {
+    view: 'Festividad/Hoteles/CrearHoteles'
+  },
+  'get /crearHotel':
+    'HotelController.crearHotel',
+  'get /editarHotel':
+    'VistaController.editarHotel'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
