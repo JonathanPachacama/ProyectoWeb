@@ -35,10 +35,10 @@ module.exports = {
   listarActividad:(req,res)=> {
 
     let parametros = req.allParams();
-
-    sails.log.info("Parametros", parametros);
+    let ideFest1 = parametros.id;
+     sails.log.info("Parametros", parametros);
     Actividad
-      .find()
+      .find({idFest:ideFest1})
       .exec((err, Actividades) => {
         if (err) return res.negotiate(err);
         else {

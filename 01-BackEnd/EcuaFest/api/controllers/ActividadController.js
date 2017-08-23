@@ -22,9 +22,10 @@ module.exports = {
     },
     listarActividad: function (req, res) {
         var parametros = req.allParams();
+        var ideFest1 = parametros.id;
         sails.log.info("Parametros", parametros);
         Actividad
-            .find()
+            .find({ idFest: ideFest1 })
             .exec(function (err, Actividades) {
             if (err)
                 return res.negotiate(err);
